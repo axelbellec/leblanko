@@ -4,6 +4,8 @@
 
 ![leblanko](docs/leblanko.gif)
 
+__`leblanko`__ provides an easy way to put accross a clearer summary of all SQL tables used in your project. 
+
 ## Installation
 
 *TODO*: publish package to PYPI
@@ -25,3 +27,13 @@ __`leblanko`__ supports pathnames so you can use it to inspect recursively an en
 ```python
 leblanko queries/
 ```
+
+If you only want to scan a bunch of SQL files you can specify file extension:
+
+```python
+leblanko *.sql
+```
+
+## Tests
+
+*TODO*: test suite (WIP)
