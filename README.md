@@ -3,7 +3,11 @@
 
 > Simple CLI tool to extract table names from query files.
 
-![leblanko](docs/leblanko.gif)
+<div align="center">
+  <img src="docs/leblanko.gif" alt="leblanko"/>
+</div>
+
+<br/>
 
 <div align="center">
 	<a href="https://travis-ci.org/axelbellec/leblanko"><img src="https://travis-ci.org/axelbellec/leblanko.svg?branch=master" alt="Build Status" /></a>
