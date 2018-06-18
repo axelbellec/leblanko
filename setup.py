@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-to_exclude = ["leblanko.cli"]
+to_exclude = ["leblanko.cli", "tests"]
 
 setup(
     name="Leblanko",
