@@ -1,10 +1,16 @@
 ## Le Blanko
 
-[![Build Status](https://travis-ci.org/axelbellec/leblanko.svg?branch=master)](https://travis-ci.org/axelbellec/leblanko)
 
 > Simple CLI tool to extract table names from query files.
 
 ![leblanko](docs/leblanko.gif)
+
+<div align="center">
+	<a href="https://travis-ci.org/axelbellec/leblanko"><img src="https://travis-ci.org/axelbellec/leblanko.svg?branch=master" alt="Build Status" /></a>
+	<a href="https://coveralls.io/github/axelbellec/leblanko">
+	<img src="https://coveralls.io/repos/github/axelbellec/leblanko/badge.svg" alt="Coverage Status"/>
+	</a>
+</div>
 
 __`leblanko`__ provides an easy way to put accross a clearer summary of all SQL tables used in your project. 
 
