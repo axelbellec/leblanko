@@ -12,6 +12,11 @@ __`leblanko`__ provides an easy way to put accross a clearer summary of all SQL 
 
 *TODO*: publish package to PYPI
 
+Install the latest version of __`leblanko`__:
+```bash
+pip install git+https://github.com/axelbellec/leblanko.git
+```
+
 ## Dependencies
 
 No external dependencies: __`leblanko`__ only use python internal libraries like [`os`](https://docs.python.org/3.5/library/os.html), [`re`](https://docs.python.org/3.5/library/re.html) and [`argparse`](https://docs.python.org/3.5/library/argparse.html).
