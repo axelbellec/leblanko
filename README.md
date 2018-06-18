@@ -36,4 +36,4 @@ leblanko *.sql
 
 ## Tests
 
-[![Coverage Status](https://coveralls.io/repos/github/axelbellec/leblanko/badge.svg?branch=master)](https://coveralls.io/github/axelbellec/leblanko?branch=master)
+[![Build Status](https://travis-ci.org/axelbellec/leblanko.svg?branch=master)](https://travis-ci.org/axelbellec/leblanko)
