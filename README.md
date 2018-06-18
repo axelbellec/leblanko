@@ -1,5 +1,7 @@
 ## Le Blanko
 
+[![Build Status](https://travis-ci.org/axelbellec/leblanko.svg?branch=master)](https://travis-ci.org/axelbellec/leblanko)
+
 > Simple CLI tool to extract table names from query files.
 
 ![leblanko](docs/leblanko.gif)
@@ -36,4 +38,16 @@ leblanko *.sql
 
 ## Tests
 
-[![Build Status](https://travis-ci.org/axelbellec/leblanko.svg?branch=master)](https://travis-ci.org/axelbellec/leblanko)
+You can clone this repository:
+```bash
+git clone https://github.com/axelbellec/leblanko.git
+```
+Install test dependencies:
+```bash
+pip install -r dev-requirements.txt
+``` 
+Then, launch test suite:
+```bash
+./launch_tests.sh
+```
+
