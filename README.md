@@ -51,6 +51,15 @@ If you only want to scan a bunch of SQL files you can specify file extension:
 leblanko *.sql
 ```
 
+It also supports [ZSH](http://ohmyz.sh/) shortcuts. Suppose we want to summarize table names coming from 3 SQL query files: 
+```python
+leblanko *.sql
+```
+... is interpreted as:
+```python
+leblanko query_1.sql query_2.sql query_3.sql
+```
+
 ## Tests
 
 You can clone this repository:
