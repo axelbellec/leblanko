@@ -36,4 +36,4 @@ leblanko *.sql
 
 ## Tests
 
-*TODO*: test suite (WIP)
+[![Coverage Status](https://coveralls.io/repos/github/axelbellec/leblanko/badge.svg?branch=master)](https://coveralls.io/github/axelbellec/leblanko?branch=master)
