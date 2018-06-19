@@ -2,6 +2,8 @@ import re
 import glob
 import os
 
+from collections import OrderedDict
+
 
 class TableFinder(object):
     REGEX_BLOCK_COMMENT = re.compile(r"/\*[^*]*\*+(?:[^*/][^*]*\*+)*/")
@@ -9,6 +11,7 @@ class TableFinder(object):
     REGEX_TRAILING_LINE_COMMENT = re.compile(r"--|#")
     REGEX_TOKENS = re.compile(r"[\s)(;]+")
     TABLE_PREDECESSOR = ["from", "join", "with", "table", "view", "partitions"]
+    VALID_QUERY_EXTENSIONS = [".sql", ".hql"]
 
     @classmethod
     def _scan_tokens(cls, tokens):
@@ -41,7 +44,8 @@ class TableFinder(object):
     def _remove_trailing_characters(cls, sql_lines):
         """ Remove trailing characters like '--' or '#'. """
         return " ".join(
-            [cls.REGEX_TRAILING_LINE_COMMENT.split(line)[0] for line in sql_lines]
+            [cls.REGEX_TRAILING_LINE_COMMENT.split(
+                line)[0] for line in sql_lines]
         )
 
     @classmethod
@@ -86,9 +90,15 @@ class TableFinder(object):
             return f.read()
 
     @classmethod
+    def _valid_file_extension(cls, filepath):
+        """ Check that the given file is a regular query file. """
+        _, file_extension = os.path.splitext(filepath)
+        return file_extension in cls.VALID_QUERY_EXTENSIONS
+
+    @classmethod
     def inspect(cls, pattern):
         """ Get all files matching pattern and extract SQL tables. """
-        result = dict()
+        result = OrderedDict()
 
         if os.path.isdir(pattern):
             pattern = os.path.join(pattern, "**")
@@ -96,6 +106,9 @@ class TableFinder(object):
         for filepath in sorted(glob.glob(pattern, recursive=True)):
             if os.path.isdir(filepath):
                 continue
+            if not cls._valid_file_extension(filepath):
+                continue
+
             sql_query = cls._read_query(filepath)
             parsed_tables = cls.get_tables_in_query(sql_query)
             result[filepath] = parsed_tables
@@ -104,7 +117,7 @@ class TableFinder(object):
     @classmethod
     def parse_files(cls, filepaths):
         """ Inspect each filepath iteratively.  """
-        parsed_tables = dict()
+        parsed_tables = OrderedDict()
         for filepath in sorted(filepaths):
             parsed_file = cls.inspect(filepath)
             parsed_tables.update(parsed_file)
