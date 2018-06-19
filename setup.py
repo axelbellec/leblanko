@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 to_exclude = ["leblanko.cli", "tests"]
 
 setup(
-    name="Leblanko",
-    version="0.1",
+    name="leblanko",
+    version="0.1.0",
     description="Simple CLI tool to extract table names from SQL query files.",
     author="Axel Bellec",
     author_email="axel.bellec@outlook.fr",
